@@ -1,13 +1,11 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-// Standard library headers
 #include <M5Unified.h>
-
-// Project-specific headers
-#include "interface/print.h"
-#include "interface/buttons.h"
+#include "helpers/print.h"
+#include "helpers/buttons.h"
 #include "modules/menus/SettingsMenu.h"
+#include "modules/resources/Messages.h"
 
 class Settings {
     public:
@@ -15,6 +13,7 @@ class Settings {
         static void PowerOff();
         static void DeepSleep();
         static void LightSpeed();
+        static void Reboot();
 };
 
 #endif //SETTINGS_H

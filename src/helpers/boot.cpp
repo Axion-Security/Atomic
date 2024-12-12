@@ -2,9 +2,7 @@
 
 void boot::BootScreen()
 {
-    print Print;
-
-    Print.ClearScreen();
+    print::ClearScreen();
 
     int padding = 10;
     int cornerRadius = 15;

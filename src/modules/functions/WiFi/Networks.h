@@ -1,17 +1,16 @@
 #ifndef NETWORKS_H
 #define NETWORKS_H
 
-// Standard library headers
 #include <WiFi.h>
-
-// Project-specific headers
 #include "modules/menus/WiFiMenu.h"
-#include "interface/print.h"
-#include "interface/buttons.h"
+#include "modules/resources/Messages.h"
+#include "helpers/print.h"
+#include "helpers/buttons.h"
 
 class Networks {
     public:
         static void CheckNetwork(const String& ssid, const String& macAddress, uint8_t channel);
+        static void GetAllNetworks();
 };
 
 #endif // NETWORKS_H

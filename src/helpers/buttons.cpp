@@ -1,11 +1,5 @@
 #include "buttons.h"
 
-/*
- *  BtnB = Bottom Right
- *  BtnA = Middle
- *  BtnPWR = Top Left
-*/
-
 bool buttons::isBtnBPressed() {
     M5.update();
     return M5.BtnB.wasPressed();
@@ -22,5 +16,5 @@ bool buttons::isBtnPWRPressed() {
 }
 
 bool buttons::WaitForButtonPress() {
-    return !buttons::isBtnBPressed() && !buttons::isBtnAPressed() && !buttons::isBtnPWRPressed();
+    return !isBtnBPressed() && !isBtnAPressed() && !isBtnPWRPressed();
 }

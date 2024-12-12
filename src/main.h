@@ -2,10 +2,9 @@
 #define MAIN_H
 
 #include <M5Unified.h>
-#include "interface/print.h"
-#include "interface/boot.h"
+#include "helpers/print.h"
+#include "helpers/boot.h"
+#include <modules/menu.h>
 using namespace std;
-
-void Testfunc(const char*);
 
 #endif // MAIN_H

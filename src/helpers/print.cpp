@@ -1,9 +1,8 @@
 #include "print.h"
 
-const int DefaultTextSize = 1;
-const int DefaultCursorX = 7;
-const int DefaultCursorY = M5.Display.getCursorY();
-const uint16_t DefaultTextColor = WHITE;
+constexpr int DefaultTextSize = 1;
+constexpr int DefaultCursorX = 7;
+constexpr uint16_t DefaultTextColor = WHITE;
 
 void print::defaultPrintSettings() {
     M5.Display.setCursor(DefaultCursorX, M5.Display.getCursorY() + 7);
@@ -54,10 +53,27 @@ bool print::isNumber(const String& str) {
     return true;
 }
 
+void print::CenteredPrint(const char* message, int textSize) {
+    defaultPrintSettings();
+
+    M5.Display.setTextSize(textSize);
+
+    int16_t textWidth = M5.Display.textWidth(message);
+
+    int x = (M5.Display.width() - textWidth) / 2;
+    int y = M5.Display.getCursorY() + 2;
+
+    M5.Display.setCursor(x, y);
+    M5.Display.println(message);
+}
+
 void print::LoopOptions(std::vector<std::pair<std::string, std::function<void()>>>& options, const std::string& title = "", const int maxVisibleOptions = 0) {
     defaultPrintSettings();
     static int currentOption = 0;
     int scrollOffset = 0;
+
+    currentOption = 0;
+    scrollOffset = 0;
 
     auto displayOptions = [&]() {
         ClearScreen();
