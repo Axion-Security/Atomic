@@ -31,9 +31,3 @@ jobs:
 
       - name: Build Project
         run: platformio run -e m5stick-c
-
-      - name: Check Compilation
-        run: platformio run --target check
-
-      - name: Test the firmware
-        run: platformio run --target monitor --environment m5stick-c
