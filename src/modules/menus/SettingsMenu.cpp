@@ -8,6 +8,7 @@ void SettingsMenu::ShowMenu() {
         {"Deep Sleep", [=] { Settings::DeepSleep(); }},
         {"Light Sleep", [=] { Settings::LightSpeed(); }},
         {"Reboot", [=] { Settings::Reboot(); }},
+        {"Format SPIFFS", [] { files::format(); }},
         {"Main Menu", [] { menu::MainMenu(); }},
     };
     print::LoopOptions(options, "WiFi Menu", 0);
