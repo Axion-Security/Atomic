@@ -21,6 +21,8 @@ void setup()
         M5.Power.powerOff();
     }
 
+    delay(3500);
+
     boot::BootScreen();
 }
 
