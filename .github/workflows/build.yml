@@ -30,7 +30,7 @@ jobs:
         run: platformio lib install
 
       - name: Build Project
-        run: platformio run --target upload --environment m5stick-c
+        run: platformio run --target build --environment m5stick-c
 
       - name: Check Compilation
         run: platformio run --target check
