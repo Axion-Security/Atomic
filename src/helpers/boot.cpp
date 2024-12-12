@@ -49,4 +49,6 @@ void boot::BootScreen()
     M5.Display.setTextColor(WHITE);
     M5.Display.setCursor((screenWidth - bottomTextLength) / 2, bottomY);
     M5.Display.print(bottomText);
+
+    delay(3500);
 }
