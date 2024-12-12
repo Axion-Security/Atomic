@@ -8,7 +8,7 @@
 
 ## Documentation
 
-For more detailed documentation, please refer to the [Wiki]([https://en.wikipedia.org/wiki/Main_Page](https://github.com/9dl/Atomic/wiki)).
+For more detailed documentation, please refer to the [Wiki](https://github.com/9dl/Atomic/wiki).
 
 ---
 
@@ -20,4 +20,4 @@ We welcome contributions to the Atomic project! If you would like to help improv
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Attribution-NonCommercial 4.0 International - see the LICENSE file for details.
