@@ -8,6 +8,7 @@
 #include "helpers/buttons.h"
 #include "helpers/print.h"
 #include "helpers/files.h"
+#include "modules/resources/Messages.h"
 
 class EvilPortal {
     public:

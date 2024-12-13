@@ -38,5 +38,6 @@
 .gcc-flags.json
 .pio
 
-# CLion
+# IDE's
 .idea
+.vscode

@@ -42,7 +42,7 @@ void EvilPortal::setupCaptivePortal() {
 
     print::ClearScreen();
     print::WriteLine("Evil Portal", "Started", true);
-    print::CenteredPrint("Press Btn B to Exit.", 1);
+    print::CenteredPrint(Messages::bButton().c_str(), 1);
 
     while (true) {
         dnsServer.processNextRequest();
