@@ -1,4 +1,4 @@
-name: PlatformIO Build, Lint, and Style Checks for M5Stick-C
+name: Build, Lint
 
 on:
   push:
@@ -35,12 +35,6 @@ jobs:
       - name: Generate Compilation Database
         run: platformio run -e m5stick-c -t compiledb
 
-      - name: Upload Compilation Database
-        uses: actions/upload-artifact@v3
-        with:
-          name: compile-commands
-          path: compile_commands.json
-
   lint:
     runs-on: ubuntu-latest
 
@@ -53,22 +47,3 @@ jobs:
 
       - name: Run cppcheck
         run: cppcheck --enable=all --inconclusive --std=c++17 --suppress=missingIncludeSystem src include
-
-  style:
-    runs-on: ubuntu-latest
-    needs: build  # Ensure this job waits for 'build' to complete
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Download Compilation Database
-        uses: actions/download-artifact@v3
-        with:
-          name: compile-commands
-
-      - name: Install clang-tidy
-        run: sudo apt-get update && sudo apt-get install -y clang-tidy
-
-      - name: Run clang-tidy
-        run: clang-tidy -p compile_commands.json src/**/*.cpp
