@@ -1,4 +1,4 @@
-name: PlatformIO Build and Test for M5Stick-C
+name: PlatformIO Build, Lint, and Style Checks for M5Stick-C
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v3
         with:
-          python-version: '3.12.7'
+          python-version: '3.12'
 
       - name: Install PlatformIO
         run: |
@@ -31,20 +31,20 @@ jobs:
 
       - name: Build Project
         run: platformio run -e m5stick-c
-        
+
+      - name: Generate Compilation Database
+        run: platformio run -e m5stick-c -t compiledb
+
   lint:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Install cppcheck
       - name: Install cppcheck
         run: sudo apt-get update && sudo apt-get install -y cppcheck
 
-      # Step 3: Run cppcheck for linting
       - name: Run cppcheck
         run: cppcheck --enable=all --inconclusive --std=c++17 --suppress=missingIncludeSystem src include
 
@@ -52,14 +52,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Install clang-tidy
       - name: Install clang-tidy
         run: sudo apt-get update && sudo apt-get install -y clang-tidy
 
-      # Step 3: Run clang-tidy for performance and style checks
       - name: Run clang-tidy
-        run: clang-tidy -p . src/**/*.cpp
+        run: |
+          if [ ! -f compile_commands.json ]; then
+            echo "Error: compile_commands.json not found. Ensure the build job runs first to generate it."
+            exit 1
+          fi
+          clang-tidy -p compile_commands.json src/**/*.cpp
