@@ -21,3 +21,13 @@ We welcome contributions to the Atomic project! If you would like to help improv
 ## License
 
 This project is licensed under the Attribution-NonCommercial 4.0 International - see the LICENSE file for details.
+
+---
+
+## Developers
+- **Axion Security**
+- **Emensta Team**
+
+This project is primarily developed and maintained by **Axion Security** in collaboration with the **Emensta Team**.
+
+---
