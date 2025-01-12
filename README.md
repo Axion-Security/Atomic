@@ -1,6 +1,6 @@
 # Atomic
 
-![Atomic Banner](https://github.com/user-attachments/assets/f76457c0-67ce-498b-86ad-57844cdae0cc)
+![Banner](https://github.com/user-attachments/assets/49d6644a-0371-4205-9fdf-10607aecb9bf)
 
 **Atomic** is an innovative firmware project designed to enhance the functionality of your M5Stack CPLUS devices. It allows you to control and interact with your hardware in a more efficient and customizable way. Atomic is ideal for developers, hardware enthusiasts, and anyone interested in learning more about embedded systems and microcontroller programming.
 
