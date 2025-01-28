@@ -18,7 +18,10 @@ void EvilPortal::Start() {
         }},
         {"Use Custom", [=]
         {
-            htmlPage = files::ls("/");
+            files::ls("/", [&](const String& content) {
+                htmlPage = content;
+            });
+
             defaultHTML();
             setupAccessPoint();
             setupCaptivePortal();

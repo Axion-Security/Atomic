@@ -10,7 +10,7 @@ class print {
         static void Write(const char* message);
         static void WriteLine(const String& option, const String& value, bool newLine);
         static void CenteredPrint(const char* message, int textSize = 2);
-        static void LoopOptions(std::vector<std::pair<std::string, std::function<void()>>>& options, const std::string& title, int maxVisibleOptions);
+        static void LoopOptions(const std::vector<std::pair<std::string, std::function<void()>>>& options, const std::string& title, int maxVisibleOptions);
 
     private:
         static void defaultPrintSettings();

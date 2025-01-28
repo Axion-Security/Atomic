@@ -67,7 +67,7 @@ void print::CenteredPrint(const char* message, int textSize) {
     M5.Display.println(message);
 }
 
-void print::LoopOptions(std::vector<std::pair<std::string, std::function<void()>>>& options, const std::string& title = "", const int maxVisibleOptions = 0) {
+void print::LoopOptions(const std::vector<std::pair<std::string, std::function<void()>>>& options, const std::string& title = "", const int maxVisibleOptions = 0) {
     defaultPrintSettings();
     static int currentOption = 0;
     int scrollOffset = 0;
